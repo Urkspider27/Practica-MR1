@@ -4,8 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/EscenaNivel1.unity
+    guid: 8383147e30fa4c3429b4e25c4c816517
+  - enabled: 1
+    path: Assets/Samples/XR Hands/1.5.1/HandVisualizer/HandVisualizer.unity
+    guid: ab7acf0d9677fbe4db51bc36647d4fcb
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: e466ccf671f71f44eacfe29ad84ece37, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7d9af38c508f6c4684d09bef581b683, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1c98d51296c776e4d8315517ef87e256, type: 2}
   m_UseUCBPForAssetBundles: 0

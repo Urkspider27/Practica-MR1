@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
+[RequireComponent(typeof(UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable))]
 public class CuboTopo : MonoBehaviour
 {
     public Material matGris;
@@ -11,10 +13,22 @@ public class CuboTopo : MonoBehaviour
     private bool estaActivo = false;
     private GameManager gameManager;
     private Renderer meshRenderer;
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable interactable;
 
     private void Awake()
     {
         meshRenderer = GetComponent<Renderer>();
+        interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
+    }
+
+    private void OnEnable()
+    {
+        interactable.hoverEntered.AddListener(AlTocarConMano);
+    }
+
+    private void OnDisable()
+    {
+        interactable.hoverEntered.RemoveListener(AlTocarConMano);
     }
 
     public void Inicializar(GameManager manager)
@@ -36,9 +50,9 @@ public class CuboTopo : MonoBehaviour
         Invoke(nameof(ReiniciarCubo), 1f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void AlTocarConMano(HoverEnterEventArgs args)
     {
-        if (estaActivo && other.CompareTag("Hand"))
+        if (estaActivo)
         {
             estaActivo = false;
             CambiarMaterial(matVerde);

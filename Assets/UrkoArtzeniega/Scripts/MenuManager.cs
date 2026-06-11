@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
             {
                 cuboActivo.Fallar();
                 cuboActivo = null;
+                Invoke(nameof(InvocarSiguiente), 1.5f);
             }
         }
     }
