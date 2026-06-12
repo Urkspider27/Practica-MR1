@@ -7,19 +7,16 @@ public class GestorMenu : MonoBehaviour
 
     public void PrepararCarga(int numeroEscena)
     {
+        // guarda el numero de la escena que hemos tocado
         escenaPendiente = numeroEscena;
-        Debug.Log("Esfera tocada. Esperando 2 segundos para cargar escena: " + numeroEscena);
-
-        // Carga la escena automáticamente tras 2 segundos para poder testear en PC
-        Invoke(nameof(ConfirmarConPulgar), 2f);
     }
 
     public void ConfirmarConPulgar()
     {
+        // si hay una escena tocada la carga al hacer el gesto
         if (escenaPendiente != -1)
         {
             SceneManager.LoadScene(escenaPendiente);
         }
     }
-
 }

@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2f0e40d60e222479ef2cdd9d9e4ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escenaDestino: 2
+  escenaDestino: 1
   matBase: {fileID: 2100000, guid: d0208036de363ca43986a125a48271a7, type: 2}
   matTocado: {fileID: 2100000, guid: a8492528896caaa409c79f2e7aa59974, type: 2}
   gestor: {fileID: 545238983}
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2f0e40d60e222479ef2cdd9d9e4ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escenaDestino: 0
+  escenaDestino: 2
   matBase: {fileID: 2100000, guid: d0208036de363ca43986a125a48271a7, type: 2}
   matTocado: {fileID: 2100000, guid: a8492528896caaa409c79f2e7aa59974, type: 2}
   gestor: {fileID: 545238983}
@@ -641,6 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545238982}
   - component: {fileID: 545238983}
+  - component: {fileID: 545238984}
   m_Layer: 0
   m_Name: GestorGestos
   m_TagString: Untagged
@@ -675,6 +676,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c9d6851a7272a47a75ea11ddd1135b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &545238984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545238979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf93899325d5df74eb9176e097ee3d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HandTrackingEvents: {fileID: 0}
+  m_HandShapeOrPose: {fileID: 11400000, guid: d1ddf20038de8cb43a4fd06ef36d5125, type: 2}
+  m_TargetTransform: {fileID: 0}
+  m_Background: {fileID: 0}
+  m_GesturePerformed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 545238983}
+        m_TargetAssemblyTypeName: GestorMenu, Assembly-CSharp
+        m_MethodName: ConfirmarConPulgar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_GestureEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  m_MinimumHoldTime: 0.2
+  m_GestureDetectionInterval: 0.1
+  m_StaticGestures: []
 --- !u!1 &733374264
 GameObject:
   m_ObjectHideFlags: 0
