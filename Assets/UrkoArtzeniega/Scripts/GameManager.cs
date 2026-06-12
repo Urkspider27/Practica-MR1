@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,12 +9,17 @@ public class GameManager : MonoBehaviour
     public float tiempoReaccion = 3f;
     public int puntosVictoria = 100;
 
+    // variable para guardar el texto de la ui
+    public TextMeshProUGUI textoPuntuacion;
+
     private int puntosActuales = 0;
     private CuboTopo cuboActivo;
     private float temporizador = 0f;
 
     private void Start()
     {
+        ActualizarTexto();
+
         foreach (CuboTopo cubo in cubos)
         {
             if (cubo != null)
@@ -61,11 +67,21 @@ public class GameManager : MonoBehaviour
     public void SumarPuntos(int puntos)
     {
         puntosActuales += puntos;
+        ActualizarTexto();
     }
 
     public void CuboGolpeado()
     {
         cuboActivo = null;
         Invoke(nameof(InvocarSiguiente), 1.5f);
+    }
+
+    // funcion para cambiar lo que pone en el texto
+    private void ActualizarTexto()
+    {
+        if (textoPuntuacion != null)
+        {
+            textoPuntuacion.text = "Puntos: " + puntosActuales + " / " + puntosVictoria;
+        }
     }
 }
